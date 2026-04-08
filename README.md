@@ -1,6 +1,6 @@
 # 🤖 Cynthia's RAG Q&A App
 
-Welcome to **Cynthia's RAG Q&A App**! This project is a beginner-friendly AI chatbot built using **Retrieval-Augmented Generation (RAG)**. It allows you to upload your own documents (PDFs, Word documents, text files) and ask questions about them, powered by OpenAI's language models.
+Welcome to **Cynthia's RAG Q&A App**! This project is an AI chatbot built using **Retrieval-Augmented Generation (RAG)**. It allows you to upload your own documents (PDFs, Word documents, text files) and ask questions about them, powered by OpenAI's language models.
 
 ---
 
