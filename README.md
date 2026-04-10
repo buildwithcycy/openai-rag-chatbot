@@ -1,12 +1,34 @@
 # 🤖 Cynthia's RAG Q&A App
 
-Welcome to **Cynthia's RAG Q&A App**! This project is an AI chatbot built using **Retrieval-Augmented Generation (RAG)**. It allows you to upload your own documents (PDFs, Word documents, text files) and ask questions about them, powered by OpenAI's language models.
+Welcome to **Cynthia's RAG Q&A App**! This project is a beginner-friendly AI chatbot built using **Retrieval-Augmented Generation (RAG)**. It allows you to upload your own documents (PDFs, Word documents, text files) and ask questions about them, powered by OpenAI's language models.
 
 ---
 
 ## 🏗️ Architecture: How it Works
 
 Ever wondered how AI can "read" your documents and answer questions? Here is the flow:
+
+```mermaid
+graph TD
+    classDef default fill:#1E293B,stroke:#38BDF8,stroke-width:2px,color:#FFF,rx:8px,ry:8px;
+    classDef database fill:#0F172A,stroke:#E879F9,stroke-width:2px,color:#FFF;
+    classDef highlight fill:#38BDF8,stroke:#0F172A,stroke-width:2px,color:#0F172A,font-weight:bold;
+
+    subgraph "Phase 1: Knowledge Ingestion"
+        A[📄 Uploaded Documents] --> B(✂️ Text Splitter<br/>Chunking)
+        B --> C{🧠 OpenAI Embeddings}
+        C --> D[(🗄️ FAISS Vector Store)]:::database
+    end
+
+    subgraph "Phase 2: Querying (RAG)"
+        E[👤 User Question] --> F{🧠 OpenAI Embeddings}
+        F --> G[🔍 Semantic Search]
+        D -. Top relevant context .-> G
+        G --> H[🤖 OpenAI LLM<br/>Generator]
+        E --> H
+        H --> I[✨ Precise Answer]:::highlight
+    end
+```
 
 1. **Document Loading**: You upload files (PDF, DOCX, TXT) via the Streamlit interface. The app extracts text from these files.
 2. **Chunking**: Large documents are split into smaller, manageable pieces (chunks) so the AI can process them easily.
