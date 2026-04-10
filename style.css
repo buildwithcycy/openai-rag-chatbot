@@ -1,0 +1,65 @@
+/* Robust app background gradient */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Hide default header background */
+[data-testid="stHeader"] {
+    background: transparent !important;
+}
+
+/* Sidebar sleek gradient */
+[data-testid="stSidebar"]>div:first-child {
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* App Title Gradient (Sky -> Indigo -> Fuchsia) */
+h1 {
+    background: -webkit-linear-gradient(45deg, #38bdf8, #818cf8, #e879f9) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+}
+
+/* Glassmorphism chat message bubbles */
+[data-testid="stChatMessage"] {
+    background: rgba(30, 41, 59, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* AI chat bubble highlight */
+[data-testid="stChatMessage"]:nth-child(even) {
+    background: rgba(56, 189, 248, 0.05) !important;
+    border: 1px solid rgba(56, 189, 248, 0.15) !important;
+}
+
+/* Premium button styling */
+.stButton>button {
+    background: linear-gradient(45deg, #818cf8, #e879f9) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 15px -3px rgba(232, 121, 249, 0.3) !important;
+}
+
+/* Styled inputs and file uploaders */
+.stTextInput>div>div>input,
+[data-testid="stFileUploaderDropzone"] {
+    background-color: rgba(15, 23, 42, 0.8) !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
